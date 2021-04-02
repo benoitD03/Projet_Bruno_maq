@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    padding: 20px;
+    background-image: radial-gradient(#6BA155, #F2DA86);
 }
 /* *********** Header *********** */
 .header {
@@ -28,10 +28,12 @@ body {
 /* *********** Citation *********** */
 #quote {
     text-align: center;
-    margin-top: 20px;
+    margin: 20px;
+    padding: 80px;
     q {
         font-size: 25px;
         font-weight: inherit;
+        font-style: italic;
     }
 }
 
@@ -61,7 +63,7 @@ body {
     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .navigationBtn {
-    background-color: #fff;
+    background-color: #E5CF48;
     height: 112px;
     width: 112px;
     position: fixed;
@@ -131,5 +133,70 @@ body {
     &::after {
         top: 0;
         transform: rotate(-135deg);
+    }
+}
+
+/* *********** Container Card *********** */
+@mixin cardBackFront {
+    content: '';
+    width: 340px;
+    height: 480px;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border: 2px solid white;
+    border-radius: 20px; 
+}
+
+main {
+    border: 3px solid black;
+    border-radius: 20px; 
+    margin: 20px 50px;
+    background-color: #DAF7A6; 
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    
+}
+.card {
+    cursor: pointer;
+    width: 340px;
+    height: 480px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    .front {
+        @include cardBackFront();
+        transform: perspective(600px) rotateY(0deg);
+        img {
+            height: 420px;
+            width: 340px;
+            border-radius: 20px 20px 0 0 ;
+            object-fit: cover;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+    .back {
+        @include cardBackFront();
+        background: #E5CF48;
+        transform: perspective(600px) rotateY(180deg);
+        border-radius: 20px;
+        .content {
+            color: #2c3e50;
+            text-align: center;
+            width: 100%;
+            margin-top: 200px;
+        }
+    }  
+    &:hover .front {
+        transform: perspective(600px) rotateY(-180deg);
+    }
+    &:hover .back {
+        transform: perspective(600px) rotateY(0deg);
     }
 }
