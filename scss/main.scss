@@ -36,7 +36,6 @@ body {
 }
 
 /* *********** Menu de navigation *********** */
-
 @mixin iconNavigation {
     content: '';
     width: 48px;
@@ -74,7 +73,6 @@ body {
     text-align: center;
     cursor: pointer;
 }
-
 .navigationIcon {
     position: relative;
     margin-top: 56px;
@@ -91,9 +89,6 @@ body {
         top: 12.8px;
     }
 }
-
-/* navigation et liste */
-
 .nav {
     height: 100vh;
     position: fixed;
@@ -120,20 +115,13 @@ body {
     text-decoration: none;
     text-transform: uppercase;
 }
-
-/* Les animations */
-
 .navigationCheckbox:checked ~ .navigationBg {
     transform: scale(80);
 }
-
 .navigationCheckbox:checked ~ .nav {
     opacity: 1;
     width: 100%;
 }
-
-/* Animation de la croix */
-
 .navigationCheckbox:checked + .navigationBtn .navigationIcon {
     background-color: transparent;
     &::before {
