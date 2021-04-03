@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    background-image: radial-gradient(#6BA155, #F2DA86);
+    background-image: radial-gradient(rgb(228, 168, 41), #F2DA86);
 }
 /* *********** Header *********** */
 .header {
@@ -58,12 +58,12 @@ body {
     position: fixed;
     top: 72px;
     right: 104px;
-    background-image: radial-gradient(#F2DA86, #6BA155);
+    background-image: radial-gradient(rgb(228, 168, 41), #F2DA86);
     z-index: 1000;
     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .navigationBtn {
-    background-color: #E5CF48;
+    background-color: beige;
     height: 112px;
     width: 112px;
     position: fixed;
@@ -153,7 +153,17 @@ main {
     border: 3px solid black;
     border-radius: 20px; 
     margin: 20px 50px;
-    background-color: #DAF7A6; 
+    background-color: beige; 
+    text-align: center;
+    h2 {
+        font-size: 30px;
+        padding: 30px;
+    }
+    p {
+        font-size: 20px;
+        padding: 20px;
+        font-style: italic;
+    }
 }
 .container {
     display: flex;
@@ -183,7 +193,7 @@ main {
     }
     .back {
         @include cardBackFront();
-        background: #E5CF48;
+        background-image: radial-gradient(rgb(228, 168, 41), #F2DA86);
         transform: perspective(600px) rotateY(180deg);
         border-radius: 20px;
         .content {
@@ -191,6 +201,23 @@ main {
             text-align: center;
             width: 100%;
             margin-top: 200px;
+            a {
+                color: black;
+                text-decoration: none;
+                button {
+                    padding: 15px;
+                    background-color: #DAF7A6;
+                    border-radius: 10px; 
+                    cursor: pointer;
+                    font-size: 15px;
+                    font-weight: bold;
+                    &:hover {
+                        background-color: #dbf7a6af;
+                    }
+                }
+                
+            }
+            
         }
     }  
     &:hover .front {
