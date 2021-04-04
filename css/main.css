@@ -150,11 +150,11 @@ body {
 
 /* *********** Container Card *********** */
 main {
-  border: 3px solid black;
   border-radius: 20px;
   margin: 20px 50px;
   background-color: beige;
   text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 main h2 {
   font-size: 30px;
@@ -241,6 +241,28 @@ main p {
 }
 .card:hover .back {
   transform: perspective(600px) rotateY(0deg);
+}
+
+/* *********** Page river *********** */
+.albumTitle {
+  text-align: center;
+  font-size: 25px;
+  margin: 40px 0;
+}
+
+.cardAlbum {
+  width: 300px;
+  height: 300px;
+  margin: 40px 0;
+  margin-bottom: 80px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.cardAlbum img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=main.css.map */
