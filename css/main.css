@@ -150,11 +150,8 @@ body {
 
 /* *********** Container Card *********** */
 main {
-  border-radius: 20px;
   margin: 20px 50px;
-  background-color: beige;
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 main h2 {
   font-size: 30px;
@@ -175,9 +172,11 @@ main p {
   cursor: pointer;
   width: 340px;
   height: 480px;
-  border-radius: 20px;
+  border-radius: 20px !important;
   margin-bottom: 50px;
   margin-top: 40px;
+  background-image: radial-gradient(#e4a829, #F2DA86);
+  border: none !important;
 }
 .card .front {
   content: "";
@@ -196,10 +195,12 @@ main p {
   width: 340px;
   border-radius: 20px 20px 0 0;
   object-fit: cover;
+  padding-right: 4px;
 }
 .card .front h3 {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 18px;
+  font-size: 15px;
 }
 .card .back {
   content: "";
@@ -251,10 +252,8 @@ main p {
 }
 
 .cardAlbum {
-  width: 300px;
-  height: 300px;
-  margin: 40px 0;
-  margin-bottom: 80px;
+  max-width: 300px !important;
+  max-height: 300px !important;
   border-radius: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
