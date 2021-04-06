@@ -4,7 +4,7 @@
 }
 body {
     //background-image: radial-gradient(rgb(228, 168, 41), #F2DA86);
-    background: radial-gradient(circle at top, #9fb8d1 0%, #92902e 100%);
+    background: radial-gradient(circle at top, #ca9f42 0%, beige 100%);
 }
 /* *********** Header *********** */
 .header {
@@ -278,6 +278,26 @@ main {
     }
 }
 
+/* *********** Biographie *********** */
+.bio {
+    border: 2px solid black;
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    img {
+        max-width: 500px;
+        max-height: 500px;
+        border-radius: 50%;
+        margin: 20px auto;
+    }
+    .bioContent {
+        margin: auto;
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
 /* *********** Media Queries *********** */
 
 @media all and (max-width: 1110px) {
@@ -301,7 +321,7 @@ main {
     .nav {
         position: absolute;
         top: 20px;
-        left: 20px;
+        left: 10px;
     }
     .cards {
         display: flex;
