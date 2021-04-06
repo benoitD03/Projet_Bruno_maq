@@ -3,7 +3,8 @@
     padding: 0;
 }
 body {
-    background-image: radial-gradient(rgb(228, 168, 41), #F2DA86);
+    //background-image: radial-gradient(rgb(228, 168, 41), #F2DA86);
+    background: radial-gradient(circle at top, #9fb8d1 0%, #92902e 100%);
 }
 /* *********** Header *********** */
 .header {
@@ -150,8 +151,7 @@ body {
 }
 
 main {
-    margin: 20px 50px;
-    //background-color: beige; 
+    margin: 20px 50px; 
     text-align: center;
     h2 {
         font-size: 30px;
@@ -175,7 +175,7 @@ main {
     border-radius: 20px !important;
     margin-bottom: 50px;
     margin-top: 40px;
-    background-image: radial-gradient(rgb(228, 168, 41), #F2DA86) ;
+    background-color: rgb(228, 168, 41, 0) !important;
     border: none !important;
     .front {
         @include cardBackFront();
@@ -232,12 +232,15 @@ main {
 
 
 
-/* *********** Page river *********** */
+/* *********** Tous les albums *********** */
 
 .albumTitle {
     text-align: center;
     font-size: 25px;
     margin: 40px 0;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .cardAlbum {
     max-width: 300px !important;
@@ -249,5 +252,58 @@ main {
         height: 300px;
         border-radius: 10px;
         object-fit: cover;
+        transition: .5s;
+        cursor: pointer;
+    }
+    &:hover img {
+        opacity: 0.3;
+    }
+    .text {
+    background: #4caf50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    opacity: 0;
+    border-radius: 10px;
+    }
+    &:hover .text {
+        opacity: 1;
+    }
+    .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+}
+
+/* *********** Media Queries *********** */
+
+@media all and (max-width: 1000px) {
+    .navigationBtn {
+        height: 112px;
+        width: 112px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .navigationBg {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .liens {
+        margin-top: 16px;
+        font-size: 20px; 
+    }
+    .nav {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .cards {
+        display: flex;
+        flex-direction: column;
     }
 }
