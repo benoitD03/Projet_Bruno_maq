@@ -291,7 +291,7 @@ main p {
 }
 
 /* *********** Media Queries *********** */
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1110px) {
   .navigationBtn {
     height: 112px;
     width: 112px;
@@ -302,8 +302,9 @@ main p {
 
   .navigationBg {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
+    overflow: hidden;
   }
 
   .liens {
@@ -320,6 +321,22 @@ main p {
   .cards {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header {
+    height: 300px;
+  }
+  .header h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
