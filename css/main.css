@@ -238,9 +238,11 @@ main p {
   background-color: #dbf7a6af;
 }
 .card:hover .front {
+  -webkit-transform: perspective(600px) rotateY(-180deg);
   transform: perspective(600px) rotateY(-180deg);
 }
 .card:hover .back {
+  -webkit-transform: perspective(600px) rotateY(0deg);
   transform: perspective(600px) rotateY(0deg);
 }
 
@@ -375,13 +377,6 @@ main p {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .card:focus .front {
-    transform: perspective(600px) rotateY(-180deg);
-  }
-  .card:focus .back {
-    transform: perspective(600px) rotateY(0deg);
   }
 
   .header {

@@ -224,9 +224,11 @@ main {
         }
     }  
     &:hover .front {
+        -webkit-transform: perspective(600px) rotateY(-180deg);;
         transform: perspective(600px) rotateY(-180deg);
     }
     &:hover .back {
+        -webkit-transform: perspective(600px) rotateY(0deg);
         transform: perspective(600px) rotateY(0deg);
     }
 }
@@ -361,14 +363,6 @@ main {
         
         margin-left: auto;
         margin-right: auto;
-    }
-    .card {
-        &:focus .front {
-            transform: perspective(600px) rotateY(-180deg);
-        }
-        &:focus .back {
-            transform: perspective(600px) rotateY(0deg);
-        }
     }
     .header{
         height: 350px;
