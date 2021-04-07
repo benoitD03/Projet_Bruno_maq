@@ -49,6 +49,7 @@ body {
     transition: all .2s;
 }
 
+
 .navigationCheckbox {
     display: none;
 }
@@ -301,18 +302,48 @@ main {
 /* *********** Media Queries *********** */
 
 @media all and (max-width: 1110px) {
+    @mixin iconNavigationResponsive {
+        content: '';
+        width: 35px;
+        height: 2px;
+        background: #333;
+        position: absolute;
+        left: 0;
+        transition: all .2s;
+    }
+    // .header {
+    //     clip-path: polygon(0 0,  100% 0, 100% 100%, 0 100%);
+    // }
     .navigationBtn {
-        height: 112px;
-        width: 112px;
+        height: 75px;
+        width: 75px;
         position: absolute;
         top: 20px;
         right: 20px;
     }
     .navigationBg {
         position: absolute;
+        height: 50px;
+        width: 50px;
         top: 25px;
         right: 25px;
         overflow: hidden;
+    }
+    .navigationIcon {
+        position: relative;
+        margin-top: 38px;
+        width: 35px;
+        height: 2px;
+        background: #333;
+        display: inline-block;
+        &::before {
+            @include iconNavigationResponsive();
+            top: -10.8px;
+        }
+        &::after {
+            @include iconNavigationResponsive();
+            top: 10.8px;
+        }
     }
     .liens {
         margin-top: 16px;
@@ -331,8 +362,17 @@ main {
         margin-left: auto;
         margin-right: auto;
     }
+    .card {
+        &:focus .front {
+            transform: perspective(600px) rotateY(-180deg);
+        }
+        &:focus .back {
+            transform: perspective(600px) rotateY(0deg);
+        }
+    }
     .header{
-        height: 300px;
+        height: 350px;
+        clip-path: polygon(0 0,  100% 0, 100% 100%, 0 100%);
         h1{
             font-size: 20px;
             letter-spacing: 2px;

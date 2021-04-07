@@ -313,8 +313,8 @@ main p {
 /* *********** Media Queries *********** */
 @media all and (max-width: 1110px) {
   .navigationBtn {
-    height: 112px;
-    width: 112px;
+    height: 75px;
+    width: 75px;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -322,9 +322,40 @@ main p {
 
   .navigationBg {
     position: absolute;
+    height: 50px;
+    width: 50px;
     top: 25px;
     right: 25px;
     overflow: hidden;
+  }
+
+  .navigationIcon {
+    position: relative;
+    margin-top: 38px;
+    width: 35px;
+    height: 2px;
+    background: #333;
+    display: inline-block;
+  }
+  .navigationIcon::before {
+    content: "";
+    width: 35px;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+    top: -10.8px;
+  }
+  .navigationIcon::after {
+    content: "";
+    width: 35px;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+    top: 10.8px;
   }
 
   .liens {
@@ -346,8 +377,16 @@ main p {
     margin-right: auto;
   }
 
+  .card:focus .front {
+    transform: perspective(600px) rotateY(-180deg);
+  }
+  .card:focus .back {
+    transform: perspective(600px) rotateY(0deg);
+  }
+
   .header {
-    height: 300px;
+    height: 350px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   .header h1 {
     font-size: 20px;
