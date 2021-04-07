@@ -10,8 +10,8 @@ body {
 .header {
     height: 800px;
     background-image:
-    linear-gradient(to right bottom, rgba(212, 106,106,0.1), rgba(242,218,134,0.7)), 
     url("../images/couverture.JPG");
+    filter: grayscale(80%);
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0,  100% 0, 100% 85%, 0 100%);
@@ -60,12 +60,12 @@ body {
     position: fixed;
     top: 72px;
     right: 104px;
-    background-image: radial-gradient(rgb(228, 168, 41), #F2DA86);
+    background-image: radial-gradient(circle at top, #ca9f42 0%, beige 100%);
     z-index: 1000;
     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .navigationBtn {
-    background-color: beige;
+    background-color: #DAF7A6;
     height: 112px;
     width: 112px;
     position: fixed;
@@ -196,7 +196,7 @@ main {
     }
     .back {
         @include cardBackFront();
-        background-image: radial-gradient(rgb(228, 168, 41), #F2DA86);
+        background-image: radial-gradient(circle at top, #ca9f42 0%, beige 100%);
         transform: perspective(600px) rotateY(180deg);
         border-radius: 20px;
         .content {
@@ -260,8 +260,8 @@ main {
         opacity: 0.3;
     }
     .text {
-    background: #4caf50;
-    color: white;
+    background:#DAF7A6;
+    color: black;
     font-size: 16px;
     padding: 16px 32px;
     opacity: 0;
@@ -295,6 +295,7 @@ main {
         margin: auto;
         h2 {
             text-align: center;
+            margin-bottom: 20px;
         }
     }
 }
@@ -370,7 +371,7 @@ main {
             letter-spacing: 2px;
             color: #fff;
             position: absolute;
-            top: 25%;
+            top: 45%;
             left: 50%;
             transform: translate(-50%, -50%);
         }

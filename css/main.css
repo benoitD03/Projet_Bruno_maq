@@ -10,7 +10,8 @@ body {
 /* *********** Header *********** */
 .header {
   height: 800px;
-  background-image: linear-gradient(to right bottom, rgba(212, 106, 106, 0.1), rgba(242, 218, 134, 0.7)), url("../images/couverture.JPG");
+  background-image: url("../images/couverture.JPG");
+  filter: grayscale(80%);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -50,13 +51,13 @@ body {
   position: fixed;
   top: 72px;
   right: 104px;
-  background-image: radial-gradient(#e4a829, #F2DA86);
+  background-image: radial-gradient(circle at top, #ca9f42 0%, beige 100%);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .navigationBtn {
-  background-color: beige;
+  background-color: #DAF7A6;
   height: 112px;
   width: 112px;
   position: fixed;
@@ -212,7 +213,7 @@ main p {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border: 2px solid white;
   border-radius: 20px;
-  background-image: radial-gradient(#e4a829, #F2DA86);
+  background-image: radial-gradient(circle at top, #ca9f42 0%, beige 100%);
   transform: perspective(600px) rotateY(180deg);
   border-radius: 20px;
 }
@@ -272,8 +273,8 @@ main p {
   opacity: 0.3;
 }
 .cardAlbum .text {
-  background: #4caf50;
-  color: white;
+  background: #DAF7A6;
+  color: black;
   font-size: 16px;
   padding: 16px 32px;
   opacity: 0;
@@ -308,6 +309,7 @@ main p {
 }
 .bio .bioContent h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 /* *********** Media Queries *********** */
@@ -386,7 +388,7 @@ main p {
     letter-spacing: 2px;
     color: #fff;
     position: absolute;
-    top: 25%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
