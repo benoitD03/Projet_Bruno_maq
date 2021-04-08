@@ -1,0 +1,162 @@
+/* *********** Header *********** */
+.header {
+    height: 800px;
+    background-image:
+    url("../images/couverture.JPG");
+    filter: grayscale(80%);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0,  100% 0, 100% 85%, 0 100%);
+    h1 {
+        font-size: 50px;
+        letter-spacing: 12px;
+        color: #fff;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+    }
+}
+/* *********** Citation *********** */
+#quote {
+    text-align: center;
+    margin: 20px;
+    padding: 80px;
+    q {
+        font-size: 25px;
+        font-weight: inherit;
+        font-style: italic;
+    }
+}
+
+/* *********** Container Card *********** */
+@mixin cardBackFront {
+    content: '';
+    width: 340px;
+    height: 480px;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border: 2px solid white;
+    border-radius: 20px; 
+}
+
+main {
+    margin: 20px 50px; 
+    text-align: center;
+    h2 {
+        font-size: 30px;
+        padding: 30px;
+    }
+    p {
+        font-size: 20px;
+        padding: 20px;
+        font-style: italic;
+    }
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    
+}
+.card {
+    cursor: pointer;
+    width: 340px;
+    height: 480px;
+    border-radius: 20px !important;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    background-color: rgb(228, 168, 41, 0) !important;
+    border: none !important;
+    .front {
+        @include cardBackFront();
+        transform: perspective(600px) rotateY(0deg);
+        img {
+            height: 420px;
+            width: 340px;
+            border-radius: 20px 20px 0 0 ;
+            object-fit: cover;
+            padding-right: 4px;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 15px;
+        }
+    }
+    .back {
+        @include cardBackFront();
+        background-image: radial-gradient(circle at top, #ca9f42 0%, beige 100%);
+        transform: perspective(600px) rotateY(180deg);
+        border-radius: 20px;
+        .content {
+            color: #2c3e50;
+            text-align: center;
+            width: 100%;
+            margin-top: 200px;
+            a {
+                color: black;
+                text-decoration: none;
+                button {
+                    padding: 15px;
+                    background-color: #DAF7A6;
+                    border-radius: 10px; 
+                    cursor: pointer;
+                    font-size: 15px;
+                    font-weight: bold;
+                    &:hover {
+                        background-color: #dbf7a6af;
+                    }
+                }
+                
+            }
+            
+        }
+    }  
+    &:hover .front {
+        transform: perspective(600px) rotateY(-180deg);
+    }
+    &:hover .back {
+        transform: perspective(600px) rotateY(0deg);
+    }
+}
+
+/* *********** Media Queries *********** */
+
+@media all and (max-width: 1110px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .header{
+        height: 350px;
+        clip-path: polygon(0 0,  100% 0, 100% 100%, 0 100%);
+        h1{
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #fff;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    } 
+    .card {
+        .back {
+            transform: perspective(600px);
+            display: none;
+        }
+        &:hover .front {
+            display: none;
+        }
+        &:hover .back {
+            display: block;
+        }
+    }
+}

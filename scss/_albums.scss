@@ -1,0 +1,45 @@
+/* *********** Tous les albums *********** */
+
+.albumTitle {
+    text-align: center;
+    font-size: 25px;
+    margin: 40px 0;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.cardAlbum {
+    max-width: 300px !important;
+    max-height: 300px !important;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    img {
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: .5s;
+        cursor: pointer;
+    }
+    &:hover img {
+        opacity: 0.3;
+    }
+    .text {
+    background:#DAF7A6;
+    color: black;
+    font-size: 16px;
+    padding: 16px 32px;
+    opacity: 0;
+    border-radius: 10px;
+    }
+    &:hover .text {
+        opacity: 1;
+    }
+    .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+}
